@@ -1,0 +1,66 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'textclassifier/style.css' %}">
+
+<div class="characters_img">
+    <img src="../../static/textclassifier/images/characters.png" width="60%" height="60%">
+</div>
+
+<div class="results_output">
+    <h2>Input</h2>
+    <h4>{{ input_text }}</h4>
+    <h2>Results</h2>
+    <h4>{{ prediction_statement|safe }}</h4>
+    <div class="character_img_comparison">
+        <div class="predicted_character_img">
+            <h4>Predicted character: {{ predicted_character }}</h4>
+	    <img src="{{ predicted_character_img_url }}">
+        </div>
+        <div class="comparison_character_img">
+            <h4>Actual character: {{ actual_character }}</h4>
+	    <img src="{{ actual_character_img_url }}">
+        </div>
+    </div>
+    <h4>{{ plot_explanation|safe }}</h4>
+    <h4>{{ comparison_statement|safe }}</h4>
+    <h3>Word and phrase contributions ranked by character</h3>
+    <h4>[Ranked absolute values of ngram weight z scores by character.
+         Shows which features had the largest magnitudes for each character.]</h4>
+    <div class="character_contributions">
+        <div class="predicted_character_contributions">
+            <img src="../../static/textclassifier/images/results/pred_ngram_contributions.png">
+        </div>
+        <div class="actual_character_contributions">
+            <img src="../../static/textclassifier/images/results/comparison_ngram_contributions.png">
+        </div>
+    </div>
+    <h3>Word and phrase POSITIVE contributions ranked by character</h3>
+    <h4>[Ranked raw values of ngram weight z scores by character. 
+         Shows which features had the most positive contributions for each character.]</h4>
+    <div class="character_strengths">
+        <div class="predicted_character_strengths">
+            <img src="../../static/textclassifier/images/results/pred_ngram_strengths.png"
+	    width="35%" height="70%">
+        </div>
+        <div class="actual_character_strengths">
+            <img src="../../static/textclassifier/images/results/comparison_ngram_strengths.png"
+	    width="35%" height="70%">
+        </div>
+    </div>
+    <h3>Top words spoken by each character</h3>
+    <div class="character_wordclouds">
+        <div class="predicted_wordcloud_img">
+            <h4>{{ predicted_wordcloud_title }}</h4>
+	    <img src="{{ predicted_wordcloud_img_url }}">
+        </div>
+        <div class="comparison_wordcloud_img">
+            <h4>{{ comparison_wordcloud_title }}</h4>
+            <img src="{{ comparison_wordcloud_img_url }}">
+        </div>
+    </div>
+    <div class="start_over">
+        <form action="{% url 'textclassifier:index' %}" method="get">
+        <input type="submit" value="Start over">
+        </form>
+    </div>
+<div>

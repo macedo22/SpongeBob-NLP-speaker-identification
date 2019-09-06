@@ -1,0 +1,43 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'textclassifier/style.css' %}">
+
+<div class="characters_img">
+    <img src="../../static/textclassifier/images/characters.png" width="60%" height="60%">
+</div>
+<div class="input_quote">
+    <h3><strong>Option 1: </strong>
+	Have the classifier predict the speaker of the input text and compare the
+	result to the true speaker that you provide. </h3>
+    <form action="{% url 'textclassifier:index' %}" method="post">
+    {% csrf_token %}
+    {{ input_text_form }}
+    <input type="hidden" id="input_info" name="input_info" value="text">
+    <input type="submit" value="Predict speaker!">
+    </form>
+</div>
+
+<div class="input_character">
+    <h3><strong>Option 2: </strong>
+	Have the classifier predict the speaker of a random test quote by a
+	character that you provide. </h3>
+    <form action="{% url 'textclassifier:index' %}" method="post">
+    {% csrf_token %}
+    {{ input_character_form }}
+    <input type="hidden" id="input_info" name="input_info" value="character">
+    <input type="submit" value="Predict speaker!">
+    </form>
+</div>
+
+<div class="input_random">
+    <h3><strong>Option 3: </strong>
+	Have the classifier predict the speaker of a random test quote by
+	a random character. </h3>
+    <form action="{% url 'textclassifier:index' %}" method="post">
+    {% csrf_token %}
+    {{ input_random_form }}
+    <input type="hidden" id="input_info" name="input_info" value="random">
+    <input type="submit" value="Predict speaker!">
+    </form>
+</div>
+
