@@ -25,8 +25,13 @@ characters_possible_lower = ['anchovies', 'doodlebob', 'doodle bob', 'gary',
 
 
 def setup():
-    class Data: pass
     import os
+
+    results_dir = './textclassifier/static/textclassifier/images/results/'
+    if not os.path.isdir(results_dir):
+       os.makedirs(results_dir)
+
+    class Data: pass
     sentiment = Data()
     
     sentiment.train_data, sentiment.train_labels = (
