@@ -58,19 +58,19 @@ def setup():
 
         
 def run_random(sentiment, cls):
-    randomIndex = random.randint(0, len(sentiment.test_data))
+    randomIndex = random.randint(0, len(sentiment.test_data) - 1)
     text = sentiment.test_data[randomIndex]
     true_label = sentiment.test_labels[randomIndex]
     context = classify.predict_with_explanation([text], sentiment, cls, true_label)
     return context
     
 def run_given_label(sentiment, cls, desired_label):
-    randomIndex = random.randint(0, len(sentiment.test_data))
+    randomIndex = random.randint(0, len(sentiment.test_data) - 1)
     text = sentiment.test_data[randomIndex]
     true_label = sentiment.test_labels[randomIndex]
     
     while desired_label != true_label:
-        randomIndex = random.randint(0, len(sentiment.test_data))
+        randomIndex = random.randint(0, len(sentiment.test_data) - 1)
         text = sentiment.test_data[randomIndex]
         true_label = sentiment.test_labels[randomIndex]
     
