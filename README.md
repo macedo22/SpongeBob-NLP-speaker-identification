@@ -28,4 +28,4 @@ believed was the 2nd most likely speaker of the input text.
 Note that if the quote is user-generated, then the user also specifies which
 character said the quote. In this case, the user's chosen speaker is considered
 to be the "true speaker." Otherwise, a quote from the show is taken at random,
-and the training label is the true speaker.
+and the true label of a test data quote is the true speaker.
