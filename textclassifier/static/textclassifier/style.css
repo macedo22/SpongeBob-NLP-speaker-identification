@@ -22,7 +22,7 @@ body, .characters_img {
 
 .predicted_character_contributions img, .actual_character_contributions img,
 .predicted_character_strengths img, .actual_character_strengths img {
-  max-width: 800px;
+  max-width: 650px;
 }
 
 h4, h3, .start_over {
