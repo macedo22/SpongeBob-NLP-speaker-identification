@@ -29,7 +29,7 @@ h4, h3, .start_over {
   clear: both;
 }
 
-.start_over {
+.start_over input {
   width: 100px;
   height: 40px;
   background-color: red;
