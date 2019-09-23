@@ -1,37 +1,29 @@
-.characters_img {
+body, .characters_img {
     background-color: #25ba3b;
+}
+
+.characters_img, .input_quote_old {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-body {
-    background-color: #25ba3b;
-}
-
-.input_quote_old {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-
-.input_quote {
+.input_quote, .input_quote_old, .input_character, .input_random {
     text-align: center;
 }
 
-.input_character {
-    text-align: center;
+.predicted_character_img, .character_image_comparison,
+.predicted_character_strengths, .actual_character_strengths,
+.predicted_wordcloud_img, .comparison_wordcloud_img {
+  float: left;
+  margin: 10px;
 }
 
-.input_random {
-    text-align: center;
+.predicted_character_contributions img, .actual_character_contributions img,
+.predicted_character_strengths img, .actual_character_strengths img {
+  max-width: 900px;
 }
 
-.character_image_comparison {
-    display: inline-block;
-}
-
-form {
-    display: inline-block;
+h4, h3, .start_over {
+  clear: both;
 }
