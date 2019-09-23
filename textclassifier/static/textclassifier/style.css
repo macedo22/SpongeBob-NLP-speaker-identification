@@ -12,7 +12,8 @@ body, .characters_img {
     text-align: center;
 }
 
-.predicted_character_img, .character_image_comparison,
+.predicted_character_img, .comparison_character_img,
+.predicted_character_contributions, .actual_character_contributions,
 .predicted_character_strengths, .actual_character_strengths,
 .predicted_wordcloud_img, .comparison_wordcloud_img {
   float: left;
@@ -21,9 +22,18 @@ body, .characters_img {
 
 .predicted_character_contributions img, .actual_character_contributions img,
 .predicted_character_strengths img, .actual_character_strengths img {
-  max-width: 900px;
+  max-width: 800px;
 }
 
 h4, h3, .start_over {
   clear: both;
+}
+
+.start_over {
+  width: 100px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  text-transform: uppercase;
+  margin: 30px 0;
 }
